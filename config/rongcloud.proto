@@ -1,0 +1,208 @@
+package Modules;
+message probuf {
+    message NotifyMsg {
+        required int32 type = 1;
+        optional int64 time = 2;
+    }
+    message SyncRequestMsg {
+        required int64 syncTime = 1;
+        required bool ispolling = 2;
+        optional bool isweb=3;
+		optional bool isPullSend=4;
+    }
+    message UpStreamMessage {
+        required int32 sessionId = 1;
+        required string classname = 2;
+        required bytes content = 3;
+        optional string pushText = 4;
+        optional string appData = 5;
+    }
+    message DownStreamMessages {
+        repeated DownStreamMessage list = 1;
+        required int64 syncTime = 2;
+    }
+    message DownStreamMessage {
+        required string fromUserId = 1;
+        required ChannelType type = 2;
+        optional string groupId = 3;
+        required string classname = 4;
+        required bytes content = 5;
+        required int64 dataTime = 6;
+        required int64 status = 7;
+        optional int64 extra = 8;
+        optional string msgId = 9;
+		optional int32 direction = 10; 
+    }
+    enum ChannelType {
+        PERSON = 1;
+        PERSONS = 2;
+        GROUP = 3;
+        TEMPGROUP = 4;
+        CUSTOMERSERVICE = 5;
+        NOTIFY = 6;
+    }
+    message CreateDiscussionInput {
+        optional string name = 1;
+    }
+    message CreateDiscussionOutput {
+        required string id = 1;
+    }
+    message ChannelInvitationInput {
+        repeated string users = 1;
+    }
+    message LeaveChannelInput {
+        required int32 nothing = 1;
+    }
+    message ChannelEvictionInput {
+        required string user = 1;
+    }
+    message RenameChannelInput {
+        required string name = 1;
+    }
+    message ChannelInfoInput {
+        required int32 nothing = 1;
+    }
+    message ChannelInfoOutput {
+        required ChannelType type = 1;
+        required string channelId = 2;
+        required string channelName = 3;
+        required string adminUserId = 4;
+        repeated string firstTenUserIds = 5;
+        required int32 openStatus = 6;
+    }
+    message ChannelInfosInput {
+        required int32 page = 1;
+        optional int32 number = 2;
+    }
+    message ChannelInfosOutput {
+        repeated ChannelInfoOutput channels = 1;
+        required int32 total = 2;
+    }
+    message MemberInfo {
+        required string userId = 1;
+        required string userName = 2;
+        required string userPortrait = 3;
+        required string extension = 4;
+    }
+    message GroupMembersInput {
+        required int32 page = 1;
+        optional int32 number = 2;
+    }
+    message GroupMembersOutput {
+        repeated MemberInfo members = 1;
+        required int32 total = 2;
+    }
+    message GetUserInfoInput {
+        required int32 nothing = 1;
+    }
+    message GetUserInfoOutput {
+        required string userId = 1;
+        required string userName = 2;
+        required string userPortrait = 3;
+    }
+    message GetSessionIdInput {
+        required int32 nothing = 1;
+    }
+    message GetSessionIdOutput {
+        required int32 sessionId = 1;
+    }
+    enum FileType {
+        image = 1;
+        audio = 2;
+        video = 3;
+    }
+    message GetQNupTokenInput {
+        required FileType type = 1;
+    }
+    message GetQNdownloadUrlInput {
+        required FileType type = 1;
+        required string key = 2;
+    }
+    message GetQNupTokenOutput {
+        required int64 deadline = 1;
+        required string token = 2;
+    }
+    message GetQNdownloadUrlOutput {
+        required string downloadUrl = 1;
+    }
+    message Add2BlackListInput {
+        required string userId = 1;
+    }
+    message RemoveFromBlackListInput {
+        required string userId = 1;
+    }
+    message QueryBlackListInput {
+        required int32 nothing = 1;
+    }
+    message QueryBlackListOutput {
+        repeated string userIds = 1;
+    }
+    message BlackListStatusInput {
+        required string userId = 1;
+    }
+    message BlockPushInput {
+        required string blockeeId = 1;
+    }
+    message ModifyPermissionInput {
+        required int32 openStatus = 1;
+    }
+    message GroupInput {
+        repeated GroupInfo groupInfo = 1;
+    }
+    message GroupOutput {
+        required int32 nothing = 1;
+    }
+    message GroupInfo {
+        required string id = 1;
+        required string name = 2;
+    }
+    message GroupHashInput {
+        required string userId = 1;
+        required string groupHashCode = 2;
+    }
+    message GroupHashOutput {
+        required GroupHashType result = 1;
+    }
+    enum GroupHashType {
+        group_success = 0x00;
+        group_failure = 0x01;
+    }
+    message ChrmInput {
+        required int32 nothing = 1;
+    }
+    message ChrmOutput {
+        required int32 nothing = 1;
+    }
+    message ChrmPullMsg {
+        required int64 syncTime = 1;
+        required int32 count = 2;
+    }
+    message RelationsInput
+    {
+        required ChannelType type = 1;
+        optional DownStreamMessage msg =2;
+    }
+    message RelationsOutput
+    {
+        repeated RelationInfo info = 1;
+    }
+    message RelationInfo
+    {
+        required ChannelType type = 1;
+        required string userId = 2;
+        optional DownStreamMessage msg =3;
+    }
+    message HistoryMessageInput
+    {
+        required string targetId = 1;
+        required int64 dataTime =2;
+        required int32 size  = 3;
+    }
+
+    message HistoryMessagesOuput
+    {
+        repeated DownStreamMessage list = 1;
+        required int64 syncTime = 2;
+        required int32 hasMsg = 3;
+    }
+}

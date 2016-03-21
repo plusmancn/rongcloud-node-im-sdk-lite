@@ -2,7 +2,7 @@
   "name": "rongcloud-node-im-sdk-lite",
   "version": "0.1.0",
   "description": "NodeJS 通过 ws 协议模拟 IM 客户端",
-  "main": "index.js",
+  "main": "lib/ry_watcher.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/plusmancn/rongcloud-node-im-sdk-lite/issues"
   },
-  "homepage": "https://github.com/plusmancn/rongcloud-node-im-sdk-lite#readme"
+  "homepage": "https://github.com/plusmancn/rongcloud-node-im-sdk-lite#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "protobufjs": "^5.0.1",
+    "request": "^2.69.0",
+    "ws": "^1.0.1"
+  }
 }
