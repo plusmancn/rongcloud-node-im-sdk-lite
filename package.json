@@ -23,6 +23,7 @@
   "homepage": "https://github.com/plusmancn/rongcloud-node-im-sdk-lite#readme",
   "dependencies": {
     "co": "^4.6.0",
+    "lodash": "^4.6.1",
     "protobufjs": "^5.0.1",
     "request": "^2.69.0",
     "ws": "^1.0.1"

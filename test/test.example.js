@@ -2,11 +2,14 @@
 
 var RYWatcher = require('../');
 
-var yxlist = require('../config/user_list.example.json');
+var watcher = new RYWatcher({
+  'id': 'user_id',
+  'token': 'ry_token'
+}, 'app_id', {
+    showLog: false // 是否打印 Log 日志
+});
 
-var watchers = yxlist.map(function(val){
-  return new RYWatcher({
-    'id': val._id.replace('youxin_', 'b'),
-    'token': val.ry_token
-  }, 'appId');
+
+watcher.on('message', function(type, userId, message){
+    console.log(type, userId, message);
 });
