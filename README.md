@@ -1,5 +1,5 @@
 # rongcloud-node-im-sdk-lite
-[![npm version](https://badge.fury.io/js/rongcloud-node-im-sdk-lite.svg)](https://badge.fury.io/js/rongcloud-node-im-sdk-lite)  
+[![rongcloud-node-im-sdk-lite](http://img.shields.io/npm/v/rongcloud-node-im-sdk-lite.svg)](https://www.npmjs.org/package/rongcloud-node-im-sdk-lite)
 
 > [rongcloud-web-im-sdk-v2](https://github.com/rongcloud/rongcloud-web-im-sdk-v2) 的 node 部分移植版。
 
