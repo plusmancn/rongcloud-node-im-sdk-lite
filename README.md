@@ -48,6 +48,7 @@ PublishMessage    PingReqMessage      |             |     =( °w° )=        |
                                                                                      
 ```
 
+
 ## 消息类型
 类型转换公式
 ```
@@ -94,7 +95,6 @@ PublishMessage    PingReqMessage      |             |     =( °w° )=        |
   32,  1
 ]
 ```
-
 需要变动的是用户ID以及前方长度部分，比如用户为 c1782，则对应 Ascii 码为 `0, 5, 99, 49, 55, 56, 50`
 
 ### QueryAckMessage
