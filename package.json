@@ -1,6 +1,6 @@
 {
   "name": "rongcloud-node-im-sdk-lite",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NodeJS 通过 ws 协议模拟 IM 客户端",
   "main": "lib/ry_watcher.js",
   "scripts": {
